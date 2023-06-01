@@ -40,13 +40,17 @@ flutter:
 
 
   fonts:
-    - family: Sora
+    - family: SF-Pro
       fonts:
-        - asset: assets/fonts/Sora-Regular.ttf
-        - asset: assets/fonts/Sora-Light.ttf
-        - asset: assets/fonts/Sora-Medium.ttf
-        - asset: assets/fonts/Sora-SemiBold.ttf
-        - asset: assets/fonts/Sora-Bold.ttf
-        - asset: assets/fonts/Sora-ExtraBold.ttf
+        - asset: assets/fonts/SF-Pro-Text-Regular.otf
+        - asset: assets/fonts/SF-Pro-Text-Light.otf
+        - asset: assets/fonts/SF-Pro-Text-Medium.otf
+        - asset: assets/fonts/SF-Pro-Text-SemiBold.otf
+        - asset: assets/fonts/SF-Pro-Text-Bold.otf
+          style: italic
+
+    - family: PT-mono
+      fonts:
+        - asset: assets/fonts/mono/PTMono-Regular.ttf
           style: italic
 
