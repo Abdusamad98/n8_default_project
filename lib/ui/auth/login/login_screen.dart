@@ -55,7 +55,7 @@ class LoginScreen extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (BuildContext context) {
-                        return const HomeScreen();
+                        return const HomeScreen(number: 10,);
                       },
                     ),
                   );
