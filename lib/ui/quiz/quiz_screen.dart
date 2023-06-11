@@ -5,6 +5,7 @@ import 'package:n8_default_project/ui/quiz/widgets/answer_item.dart';
 import 'package:n8_default_project/ui/quiz/widgets/bottom_buttons_view.dart';
 import 'package:n8_default_project/ui/quiz/widgets/quiz_appbar.dart';
 import 'package:n8_default_project/ui/quiz/widgets/quiz_screen_top.dart';
+import 'package:n8_default_project/ui/quiz_result/quiz_result.dart';
 import 'package:n8_default_project/utils/colors.dart';
 import 'package:n8_default_project/utils/utility_functions.dart';
 
@@ -21,7 +22,6 @@ class QuizScreen extends StatefulWidget {
 }
 
 class _QuizScreenState extends State<QuizScreen> {
-
   List<QuestionModel> subjectQuestions = [];
 
   int currentQuestionIndex = 0;
@@ -49,7 +49,17 @@ class _QuizScreenState extends State<QuizScreen> {
     return Scaffold(
       appBar: QuizAppBar(
         onSubmitTap: () {
-
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return QuizResult(
+                  answersMap: answersMap,
+                  subjectModel: widget.subject,
+                );
+              },
+            ),
+          );
         },
         onTap: () {
           Navigator.pop(context);

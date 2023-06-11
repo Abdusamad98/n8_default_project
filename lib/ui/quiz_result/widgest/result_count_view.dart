@@ -14,75 +14,74 @@ class ResultCountView extends StatelessWidget {
   final int countTrue;
   final int countFalse;
 
-
   @override
   Widget build(BuildContext context) {
-    return Row(children: [
-      Expanded(
-        child: Container(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 16,
-            vertical: 12,
-          ),
-          decoration: BoxDecoration(
-            color: AppColors.C_27AE60,
-
-            borderRadius: BorderRadius.circular(16),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "$countTrue",
-                style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.textColor,
+    return Row(
+      children: [
+        Expanded(
+          child: Container(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16,
+              vertical: 12,
+            ),
+            decoration: BoxDecoration(
+              color: AppColors.C_27AE60,
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "$countTrue",
+                  style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.textColor,
+                      ),
                 ),
-              ),
-              Text(
-                "Correct answers",
-                style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 13,
-                ),
-              )
-            ],
+                Text(
+                  "Correct answers",
+                  style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 13,
+                      ),
+                )
+              ],
+            ),
           ),
         ),
-      ),
-      const SizedBox(width: 16),
-      Expanded(
-        child: Container(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 16,
-            vertical: 12,
-          ),
-          decoration: BoxDecoration(
-            color: AppColors.C_EB5757,
-
-            borderRadius: BorderRadius.circular(16),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "$countFalse",
-                style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.textColor,
+        const SizedBox(width: 16),
+        Expanded(
+          child: Container(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16,
+              vertical: 12,
+            ),
+            decoration: BoxDecoration(
+              color: AppColors.C_EB5757,
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "$countFalse",
+                  style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.textColor,
+                      ),
                 ),
-              ),
-              Text(
-                "Correct answers",
-                style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 13,
-                ),
-              )
-            ],
+                Text(
+                  "Wrong answers",
+                  style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 13,
+                      ),
+                )
+              ],
+            ),
           ),
         ),
-      ),
-    ],);
+      ],
+    );
   }
 }
