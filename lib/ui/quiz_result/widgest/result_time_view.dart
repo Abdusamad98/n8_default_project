@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:n8_default_project/utils/icons.dart';
+import 'package:n8_default_project/utils/utility_functions.dart';
 
 import '../../../utils/colors.dart';
 
@@ -8,10 +9,11 @@ class ResultTimeView extends StatelessWidget {
   const ResultTimeView({
     Key? key,
     required this.totalQuestionsCount,
-    required this.totalTime,
+    required this.passedTime,
   }) : super(key: key);
 
-  final int totalTime;
+
+  final int passedTime;
   final int totalQuestionsCount;
 
   @override
@@ -34,7 +36,7 @@ class ResultTimeView extends StatelessWidget {
                 SvgPicture.asset(AppImages.timerLeft),
                 const SizedBox(height: 4),
                 Text(
-                  "12 m 20sc",
+                  getMinutelyText(passedTime),
                   style: Theme.of(context).textTheme.titleSmall!.copyWith(
                         fontWeight: FontWeight.w600,
                         color: AppColors.textColor,
@@ -69,7 +71,7 @@ class ResultTimeView extends StatelessWidget {
                 SvgPicture.asset(AppImages.timerRight),
                 const SizedBox(height: 4),
                 Text(
-                  "2 m 28 sec",
+                  getMinutelyText(passedTime ~/ totalQuestionsCount),
                   style: Theme.of(context).textTheme.titleSmall!.copyWith(
                         fontWeight: FontWeight.w600,
                         color: AppColors.textColor,

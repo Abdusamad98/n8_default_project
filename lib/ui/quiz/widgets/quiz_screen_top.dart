@@ -8,11 +8,12 @@ import 'my_progress_indicator.dart';
 
 
 class QuizScreenTop extends StatelessWidget {
-  const QuizScreenTop({Key? key, required this.rate, required this.subjectName, required this.height}) : super(key: key);
+  const QuizScreenTop({Key? key, required this.rate, required this.subjectName, required this.height, required this.timeText}) : super(key: key);
 
   final double rate;
   final String subjectName;
   final double height;
+  final String timeText;
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +46,7 @@ class QuizScreenTop extends StatelessWidget {
               ),
               const SizedBox(width: 8),
               Text(
-                "07:28",
+                timeText,
                 style: Theme.of(context)
                     .textTheme
                     .bodySmall!

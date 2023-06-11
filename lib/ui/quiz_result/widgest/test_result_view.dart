@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:n8_default_project/utils/icons.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
 
 import '../../../utils/colors.dart';
 
@@ -29,7 +30,38 @@ class TestResultView extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SvgPicture.asset(AppImages.progressBar),
+          CircularPercentIndicator(
+            circularStrokeCap: CircularStrokeCap.round,
+            reverse: true,
+            radius: 55.0,
+            lineWidth: 8.0,
+            animation: true,
+            animationDuration: 1000,
+            percent: trueAnswersCount / totalQuestionCount,
+            center: RichText(
+              textAlign: TextAlign.center,
+              text: TextSpan(
+                text: "$trueAnswersCount",
+                style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 24,
+                    ),
+                children: <TextSpan>[
+                  TextSpan(
+                    text: "/$totalQuestionCount\nyour score",
+                    style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 13,
+                        color: AppColors.textColor.withOpacity(0.75)),
+                  ),
+                ],
+              ),
+            ),
+            progressColor: AppColors.C_0E81B4,
+            backgroundColor: AppColors.C_0E81B4.withOpacity(0.4),
+          ),
+
+          //SvgPicture.asset(AppImages.progressBar),
           const SizedBox(width: 20),
           Expanded(
             child: RichText(

@@ -37,10 +37,7 @@ class _QuizDetailScreenState extends State<QuizDetailScreen> {
         padding: const EdgeInsets.only(top: 22),
         child: Stack(
           children: [
-            Container(
-
-            ),
-
+            Container(),
             Expanded(
               child: Container(
                 decoration: const BoxDecoration(
@@ -50,45 +47,49 @@ class _QuizDetailScreenState extends State<QuizDetailScreen> {
                   ),
                   color: AppColors.C_162023,
                 ),
-                child: ListView(
-                  padding: const EdgeInsets.all(32),
-                  children: [
-                    SubjectImageView(iconPath: widget.subject.subjectImage),
-                    const SizedBox(height: 16),
-                    getRichText(
-                      "Total Questions:  ",
-                      widget.subject.questions.length.toString(),
-                      context,
-
-                    ),
-                    const SizedBox(height: 12),
-                    getRichText(
-                      "Total time:  ",
-                      "${widget.subject.quizTime ~/ 60}: ${widget.subject.quizTime % 60}",
-                      context,
-                    ),
-                    const SizedBox(height: 12),
-                    Text(
-                      "Instructions:",
-                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                            fontWeight: FontWeight.w700,
-                          ),
-                    ),
-                    const SizedBox(height: 5),
-                    Text(
-                      widget.subject.description,
-                      textAlign: TextAlign.start,
-                      style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                          fontWeight: FontWeight.w400, letterSpacing: 1.2),
-                    ),
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 24),
+                  child: ListView(
+                    padding:
+                        const EdgeInsets.only(left: 24, right: 24, bottom: 24),
+                    children: [
+                      SubjectImageView(iconPath: widget.subject.subjectImage),
+                      const SizedBox(height: 16),
+                      getRichText(
+                        "Total Questions:  ",
+                        widget.subject.questions.length.toString(),
+                        context,
+                      ),
+                      const SizedBox(height: 12),
+                      getRichText(
+                        "Total time:  ",
+                        getMinutelyText(widget.subject.quizTime),
+                        context,
+                      ),
+                      const SizedBox(height: 12),
+                      Text(
+                        "Instructions:",
+                        style:
+                            Theme.of(context).textTheme.titleMedium!.copyWith(
+                                  fontWeight: FontWeight.w700,
+                                ),
+                      ),
+                      const SizedBox(height: 5),
+                      Text(
+                        widget.subject.description,
+                        textAlign: TextAlign.start,
+                        style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                            fontWeight: FontWeight.w400, letterSpacing: 1.2),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 32),
+                padding: const EdgeInsets.symmetric(horizontal: 32),
                 height: 80,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(40),
@@ -98,7 +99,7 @@ class _QuizDetailScreenState extends State<QuizDetailScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     TimeContainer(
-                        timeText: "${widget.subject.quizTime ~/ 60}: ${widget.subject.quizTime % 60}"),
+                        timeText: getMinutelyText(widget.subject.quizTime)),
                     const SizedBox(width: 32),
                     Expanded(
                       child: GlobalButton(
@@ -125,5 +126,4 @@ class _QuizDetailScreenState extends State<QuizDetailScreen> {
       ),
     );
   }
-
 }

@@ -4,6 +4,7 @@ import 'package:n8_default_project/models/subject_model.dart';
 import 'package:n8_default_project/ui/subjects/widgets/subject_item.dart';
 import 'package:n8_default_project/ui/quiz_detail/quiz_detail.dart';
 import 'package:n8_default_project/utils/colors.dart';
+import 'package:n8_default_project/utils/utility_functions.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -28,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
               color: subject.subjectColor,
               subjectTitle: subject.subjectName,
               level: subject.level.name,
-              time: "${subject.quizTime / 60} minut",
+              time: getMinutelyText(subject.quizTime),
               onTap: () {
                 Navigator.push(
                   context,

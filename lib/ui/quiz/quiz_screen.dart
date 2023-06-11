@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:n8_default_project/models/question_model.dart';
 import 'package:n8_default_project/models/subject_model.dart';
@@ -24,6 +26,8 @@ class QuizScreen extends StatefulWidget {
 class _QuizScreenState extends State<QuizScreen> {
   List<QuestionModel> subjectQuestions = [];
 
+  int count = 0;
+
   int currentQuestionIndex = 0;
   int selectedAnswerIndex = 0;
 
@@ -31,36 +35,33 @@ class _QuizScreenState extends State<QuizScreen> {
 
   @override
   void initState() {
-    subjectQuestions = widget.subject.questions;
+    _init();
+    _timerLogic();
+    super.initState();
+  }
 
+  _init() {
+    subjectQuestions = widget.subject.questions;
     for (int i = 0; i < subjectQuestions.length; i++) {
       answersMap[i] = 0;
     }
+  }
 
-    print("Answers Initial Set:$answersMap");
-
-    super.initState();
+  Future<void> _timerLogic() async {
+    for (int i = 0; i < widget.subject.quizTime; i++) {
+      await Future.delayed(const Duration(seconds: 1));
+      count = i + 1;
+      setState(() {});
+    }
+    _navigateToResultScreen();
   }
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: QuizAppBar(
-        onSubmitTap: () {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                return QuizResult(
-                  answersMap: answersMap,
-                  subjectModel: widget.subject,
-                );
-              },
-            ),
-          );
-        },
+        onSubmitTap: _navigateToResultScreen,
         onTap: () {
           Navigator.pop(context);
         },
@@ -70,9 +71,10 @@ class _QuizScreenState extends State<QuizScreen> {
         children: [
           const SizedBox(height: 12),
           QuizScreenTop(
-            rate: 0.67,
+            rate: (1 - count / widget.subject.quizTime),
             subjectName: widget.subject.subjectName,
             height: height,
+            timeText: getMinutelyText(widget.subject.quizTime - count),
           ),
           Expanded(
             child: Container(
@@ -186,6 +188,21 @@ class _QuizScreenState extends State<QuizScreen> {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  void _navigateToResultScreen() {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (context) {
+          return QuizResult(
+            passedTime: count,
+            answersMap: answersMap,
+            subjectModel: widget.subject,
+          );
+        },
       ),
     );
   }

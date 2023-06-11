@@ -9,7 +9,7 @@ class MyRepository {
     SubjectModel(
       subjectImage: AppImages.math,
       subjectName: "Mathematics",
-      quizTime: 600,
+      quizTime: 65,
       level: QuizLevel.easy,
       description:
           '''The quizzes consists of questions carefully designed to help you self-assess your comprehension of the information presented on the topics covered in the module.

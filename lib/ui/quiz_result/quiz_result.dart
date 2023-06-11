@@ -11,18 +11,18 @@ import 'package:n8_default_project/ui/quiz_result/widgest/test_result_view.dart'
 import 'package:n8_default_project/ui/widgets/global_button.dart';
 import 'package:n8_default_project/utils/colors.dart';
 
-import '../../models/question_model.dart';
 import '../widgets/global_appbar.dart';
 
 class QuizResult extends StatefulWidget {
   const QuizResult({
     Key? key,
     required this.answersMap,
-    required this.subjectModel,
+    required this.subjectModel, required this.passedTime,
   }) : super(key: key);
 
   final Map<int, int> answersMap;
   final SubjectModel subjectModel;
+  final int passedTime;
 
   @override
   State<QuizResult> createState() => _QuizResultState();
@@ -57,30 +57,31 @@ class _QuizResultState extends State<QuizResult> {
               physics: const BouncingScrollPhysics(),
               padding: const EdgeInsets.all(30),
               children: [
-                const ResultTopView(
+                ResultTopView(
                   title: "Pair of Linear Equation in Two Variables ",
-                  subTitle: "Maths / Real Numbers",
+                  subTitle: "${widget.subjectModel.subjectName} /  Theme",
                 ),
                 const SizedBox(height: 19),
-                 TestResultView(
-                  totalQuestionCount:widget.subjectModel.questions.length ,
+                TestResultView(
+                  totalQuestionCount: widget.subjectModel.questions.length,
                   trueAnswersCount: answersReport.trueCount,
                 ),
                 const SizedBox(height: 19),
                 ResultCountView(
-                  countFalse: answersReport.falseCount+answersReport.unselectedCount,
+                  countFalse:
+                      answersReport.falseCount + answersReport.unselectedCount,
                   countTrue: answersReport.trueCount,
                 ),
                 const SizedBox(height: 19),
-                const ResultTimeView(
-                  totalQuestionsCount: 12,
-                  totalTime: 600,
+                 ResultTimeView(
+                   passedTime: widget.passedTime,
+                  totalQuestionsCount: widget.subjectModel.questions.length,
                 ),
                 const SizedBox(height: 19),
                 GlobalButton(
                   title: "Check Answers",
                   onTap: () {
-                    Navigator.pushReplacement(
+                    Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) {
@@ -94,7 +95,9 @@ class _QuizResultState extends State<QuizResult> {
                   withBorder: true,
                 ),
                 const SizedBox(height: 16),
-                RetryButton(onTap: () {}),
+                RetryButton(onTap: () {
+                  Navigator.pop(context);
+                }),
               ],
             ),
           ),
