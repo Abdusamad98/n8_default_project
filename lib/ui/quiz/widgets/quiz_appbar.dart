@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../utils/colors.dart';
@@ -30,8 +31,8 @@ class QuizAppBar extends StatelessWidget implements PreferredSize {
               GestureDetector(
                 onTap: onTap,
                 child: Container(
-                  height: 48,
-                  width: 48,
+                  height: 48.w,
+                  width: 48.w,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
                       color: AppColors.C_162023,
@@ -41,21 +42,21 @@ class QuizAppBar extends StatelessWidget implements PreferredSize {
                   ),
                 ),
               ),
-              const SizedBox(width: 16),
+               SizedBox(width: 16.w),
               Text(
                 title,
                 style: Theme.of(context)
                     .textTheme
                     .titleMedium!
-                    .copyWith(fontSize: 18),
+                    .copyWith(fontSize: 18.sp),
               ),
               const Spacer(),
               GestureDetector(
                 onTap: onSubmitTap,
                 child: Container(
-                  padding: const EdgeInsets.all(10),
+                  padding:  EdgeInsets.all(10.w),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius: BorderRadius.circular(8.w),
                     border: Border.all(
                       color: AppColors.C_0E81B4,
                       width: 1,

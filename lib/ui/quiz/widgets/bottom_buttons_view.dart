@@ -8,7 +8,8 @@ class BottomButtonViews extends StatelessWidget {
     Key? key,
     required this.onNextTap,
     required this.onPreviousTap,
-    required this.onNextTapVisibility, required this.onPreviousTapVisibility,
+    required this.onNextTapVisibility,
+    required this.onPreviousTapVisibility,
   }) : super(key: key);
 
   final VoidCallback onNextTap;
@@ -19,7 +20,8 @@ class BottomButtonViews extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    return Padding(
+    return Container(
+      color: AppColors.C_162023,
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 32),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -37,52 +37,51 @@ class _QuizDetailScreenState extends State<QuizDetailScreen> {
         padding: const EdgeInsets.only(top: 22),
         child: Stack(
           children: [
-            Container(),
-            Expanded(
-              child: Container(
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(40),
-                    topRight: Radius.circular(40),
-                  ),
-                  color: AppColors.C_162023,
+            Container(
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(40),
+                  topRight: Radius.circular(40),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 24),
-                  child: ListView(
-                    padding:
-                        const EdgeInsets.only(left: 24, right: 24, bottom: 24),
-                    children: [
-                      SubjectImageView(iconPath: widget.subject.subjectImage),
-                      const SizedBox(height: 16),
-                      getRichText(
-                        "Total Questions:  ",
-                        widget.subject.questions.length.toString(),
-                        context,
-                      ),
-                      const SizedBox(height: 12),
-                      getRichText(
-                        "Total time:  ",
-                        getMinutelyText(widget.subject.quizTime),
-                        context,
-                      ),
-                      const SizedBox(height: 12),
-                      Text(
-                        "Instructions:",
-                        style:
-                            Theme.of(context).textTheme.titleMedium!.copyWith(
-                                  fontWeight: FontWeight.w700,
-                                ),
-                      ),
-                      const SizedBox(height: 5),
-                      Text(
-                        widget.subject.description,
-                        textAlign: TextAlign.start,
-                        style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                            fontWeight: FontWeight.w400, letterSpacing: 1.2),
-                      ),
-                    ],
-                  ),
+                color: AppColors.C_162023,
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(top: 24),
+                child: ListView(
+                  physics: const BouncingScrollPhysics(),
+                  padding:
+                      const EdgeInsets.only(left: 24, right: 24, bottom: 24),
+                  children: [
+                    SubjectImageView(iconPath: widget.subject.subjectImage),
+                    const SizedBox(height: 16),
+                    getRichText(
+                      "Total Questions:  ",
+                      widget.subject.questions.length.toString(),
+                      context,
+                    ),
+                    const SizedBox(height: 12),
+                    getRichText(
+                      "Total time:  ",
+                      getMinutelyText(widget.subject.quizTime),
+                      context,
+                    ),
+                    const SizedBox(height: 12),
+                    Text(
+                      "Instructions:",
+                      style:
+                          Theme.of(context).textTheme.titleMedium!.copyWith(
+                                fontWeight: FontWeight.w700,
+                              ),
+                    ),
+                    const SizedBox(height: 5),
+                    Text(
+                      widget.subject.description,
+                      textAlign: TextAlign.start,
+                      style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                          fontWeight: FontWeight.w400, letterSpacing: 1.2),
+                    ),
+                    const SizedBox( height: 80,)
+                  ],
                 ),
               ),
             ),

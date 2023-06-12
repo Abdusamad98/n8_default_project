@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:n8_default_project/utils/colors.dart';
 
 class SubjectItem extends StatelessWidget {
@@ -22,12 +23,12 @@ class SubjectItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      margin:  EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       child: Ink(
         height: MediaQuery.of(context).size.height / 7,
         decoration: BoxDecoration(
             color: color,
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(10.r),
             boxShadow: [
               BoxShadow(
                 color: AppColors.C_162023.withOpacity(0.3),
@@ -42,7 +43,7 @@ class SubjectItem extends StatelessWidget {
             children: [
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                     EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -59,7 +60,7 @@ class SubjectItem extends StatelessWidget {
               ),
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                     EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

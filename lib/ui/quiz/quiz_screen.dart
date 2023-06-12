@@ -85,108 +85,94 @@ class _QuizScreenState extends State<QuizScreen> {
                 ),
                 color: AppColors.C_162023,
               ),
-              child: Column(
+              child: ListView(
+                padding: const EdgeInsets.all(28),
                 children: [
-                  Expanded(
-                    child: ListView(
-                      padding: const EdgeInsets.all(28),
-                      children: [
-                        getRichTextForCount("Q.${currentQuestionIndex + 1}/",
-                            "${subjectQuestions.length}", context),
-                        const SizedBox(height: 12),
-                        Text(
-                          subjectQuestions[currentQuestionIndex].questionText,
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleMedium!
-                              .copyWith(fontSize: 15),
-                        ),
-                        AnswerItem(
-                          isSelected: selectedAnswerIndex == 1,
-                          variantName: "A.",
-                          answerText:
-                              subjectQuestions[currentQuestionIndex].answer1,
-                          onTap: () {
-                            setState(() {
-                              selectedAnswerIndex = 1;
-                            });
-                            answersMap[currentQuestionIndex] =
-                                selectedAnswerIndex;
-                          },
-                        ),
-                        AnswerItem(
-                          isSelected: selectedAnswerIndex == 2,
-                          variantName: "B.",
-                          answerText:
-                              subjectQuestions[currentQuestionIndex].answer2,
-                          onTap: () {
-                            setState(() {
-                              selectedAnswerIndex = 2;
-                            });
-                            answersMap[currentQuestionIndex] =
-                                selectedAnswerIndex;
-                          },
-                        ),
-                        AnswerItem(
-                          isSelected: selectedAnswerIndex == 3,
-                          variantName: "C.",
-                          answerText:
-                              subjectQuestions[currentQuestionIndex].answer3,
-                          onTap: () {
-                            setState(() {
-                              selectedAnswerIndex = 3;
-                            });
-                            answersMap[currentQuestionIndex] =
-                                selectedAnswerIndex;
-                          },
-                        ),
-                        AnswerItem(
-                          isSelected: selectedAnswerIndex == 4,
-                          variantName: "D.",
-                          answerText:
-                              subjectQuestions[currentQuestionIndex].answer4,
-                          onTap: () {
-                            setState(() {
-                              selectedAnswerIndex = 4;
-                            });
-                            answersMap[currentQuestionIndex] =
-                                selectedAnswerIndex;
-                          },
-                        ),
-                      ],
-                    ),
+                  getRichTextForCount("Q.${currentQuestionIndex + 1}/",
+                      "${subjectQuestions.length}", context),
+                  const SizedBox(height: 12),
+                  Text(
+                    subjectQuestions[currentQuestionIndex].questionText,
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleMedium!
+                        .copyWith(fontSize: 15),
                   ),
-                  BottomButtonViews(
-                    onNextTapVisibility:
-                        !(currentQuestionIndex == subjectQuestions.length - 1),
-                    onPreviousTapVisibility: !(currentQuestionIndex == 0),
-                    onNextTap: () {
-                      if (currentQuestionIndex < subjectQuestions.length - 1) {
-                        currentQuestionIndex++;
-                        selectedAnswerIndex = answersMap[currentQuestionIndex]!;
-                        setState(() {});
-                      }
-                      // else {
-                      //   ScaffoldMessenger.of(context).showSnackBar(
-                      //       const SnackBar(content: Text("Savollar tamom")));
-                      // }
+                  AnswerItem(
+                    isSelected: selectedAnswerIndex == 1,
+                    variantName: "A.",
+                    answerText: subjectQuestions[currentQuestionIndex].answer1,
+                    onTap: () {
+                      setState(() {
+                        selectedAnswerIndex = 1;
+                      });
+                      answersMap[currentQuestionIndex] = selectedAnswerIndex;
                     },
-                    onPreviousTap: () {
-                      if (currentQuestionIndex > 0) {
-                        currentQuestionIndex--;
-                        selectedAnswerIndex = answersMap[currentQuestionIndex]!;
-                        setState(() {});
-                      }
-                      // else {
-                      //   ScaffoldMessenger.of(context).showSnackBar(
-                      //       const SnackBar(content: Text("Bu 1- savol")));
-                      // }
+                  ),
+                  AnswerItem(
+                    isSelected: selectedAnswerIndex == 2,
+                    variantName: "B.",
+                    answerText: subjectQuestions[currentQuestionIndex].answer2,
+                    onTap: () {
+                      setState(() {
+                        selectedAnswerIndex = 2;
+                      });
+                      answersMap[currentQuestionIndex] = selectedAnswerIndex;
                     },
-                  )
+                  ),
+                  AnswerItem(
+                    isSelected: selectedAnswerIndex == 3,
+                    variantName: "C.",
+                    answerText: subjectQuestions[currentQuestionIndex].answer3,
+                    onTap: () {
+                      setState(() {
+                        selectedAnswerIndex = 3;
+                      });
+                      answersMap[currentQuestionIndex] = selectedAnswerIndex;
+                    },
+                  ),
+                  AnswerItem(
+                    isSelected: selectedAnswerIndex == 4,
+                    variantName: "D.",
+                    answerText: subjectQuestions[currentQuestionIndex].answer4,
+                    onTap: () {
+                      setState(() {
+                        selectedAnswerIndex = 4;
+                      });
+                      answersMap[currentQuestionIndex] = selectedAnswerIndex;
+                    },
+                  ),
                 ],
               ),
             ),
           ),
+          BottomButtonViews(
+            onNextTapVisibility:
+                !(currentQuestionIndex == subjectQuestions.length - 1),
+            onPreviousTapVisibility: !(currentQuestionIndex == 0),
+            onNextTap: () {
+              if (currentQuestionIndex < subjectQuestions.length - 1) {
+                currentQuestionIndex++;
+                selectedAnswerIndex = answersMap[currentQuestionIndex]!;
+                setState(() {});
+              }
+              // else {
+              //   ScaffoldMessenger.of(context).showSnackBar(
+              //       const SnackBar(content: Text("Savollar tamom")));
+              // }
+            },
+            onPreviousTap: () {
+              if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                selectedAnswerIndex = answersMap[currentQuestionIndex]!;
+                setState(() {});
+              }
+              // else {
+              //   ScaffoldMessenger.of(context).showSnackBar(
+              //       const SnackBar(content: Text("Bu 1- savol")));
+              // }
+            },
+          )
         ],
       ),
     );
