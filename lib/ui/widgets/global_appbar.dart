@@ -19,7 +19,7 @@ class GlobalAppBar extends StatelessWidget implements PreferredSize {
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false,
-      toolbarHeight: 80,
+      toolbarHeight: 80.h,
       title: Column(
         children: [
           const SizedBox(height: 24),
@@ -32,7 +32,7 @@ class GlobalAppBar extends StatelessWidget implements PreferredSize {
                   height: 48.w,
                   width: 48.w,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(8.r),
                       color: AppColors.C_162023,
                       border: Border.all(color: AppColors.C_2F3739)),
                   child: Center(
@@ -40,7 +40,7 @@ class GlobalAppBar extends StatelessWidget implements PreferredSize {
                   ),
                 ),
               ),
-              const SizedBox(width: 16),
+               SizedBox(width: 16.w),
               Text(
                 title,
                 style: Theme.of(context)
