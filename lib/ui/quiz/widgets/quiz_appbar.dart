@@ -54,7 +54,7 @@ class QuizAppBar extends StatelessWidget implements PreferredSize {
               GestureDetector(
                 onTap: onSubmitTap,
                 child: Container(
-                  padding:  EdgeInsets.all(10.w),
+                  padding:  EdgeInsets.all(10.h),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8.w),
                     border: Border.all(

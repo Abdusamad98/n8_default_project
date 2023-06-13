@@ -32,7 +32,7 @@ class ResultReportScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       // Text(report.answerState.name),
-                      Text("True answer : ${report.trueAnswer}")
+                      Expanded(child: Text("True answer : ${report.trueAnswer}"))
                     ],
                   ),
                   Text("Your answer : ${report.yourAnswer}")

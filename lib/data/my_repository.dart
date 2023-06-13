@@ -360,13 +360,13 @@ If you select an incorrect response for a question, you can try again until you 
     SubjectModel(
       subjectImage: AppImages.flutter,
       subjectName: "Flutter",
-      description: "Flutter Test",
+      description: """Flutter dasturlash tili mavzusida tushunchangizni o'zlashtirishga yordam berish maqsadida tuzilgan savollar to'plamidan iboratdir. Savolga javob berishdan so'ng, quyida joylashgan "Keyingi savol" tugmasini bosing, keyingi savolga o'tish uchun. 8-savolga javob berishdan so'ng, yuqoridagi "Yopish" tugmasini bosing va sinovdan chiqing.
+    Agar savolga noto'g'ri javob beringiz, to'g'ri javobni topguncha qaytadan urinib ko'rishingiz mumkin. Agar sinovni qayta olishni istasangiz, savollar va ularning javoblari tasodifiy tartibda keltiriladi.""",
       subjectColor: AppColors.C_162023,
       level: QuizLevel.easy,
       questions: [
         QuestionModel(
-          trueAnswer: """Flutter dasturlash tili mavzusida tushunchangizni o'zlashtirishga yordam berish maqsadida tuzilgan savollar to'plamidan iboratdir. Savolga javob berishdan so'ng, quyida joylashgan "Keyingi savol" tugmasini bosing, keyingi savolga o'tish uchun. 8-savolga javob berishdan so'ng, yuqoridagi "Yopish" tugmasini bosing va sinovdan chiqing.
-Agar savolga noto'g'ri javob beringiz, to'g'ri javobni topguncha qaytadan urinib ko'rishingiz mumkin. Agar sinovni qayta olishni istasangiz, savollar va ularning javoblari tasodifiy tartibda keltiriladi.""",
+          trueAnswer: "Flutter, Google tomonidan ishlab chiqilgan, mobil ilovalarni yaratish uchun ishlatiladigan, yagona kross-platforma dasturlash tili.",
           questionText:
               " Flutter nima?",
           answer1: "Block",

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:n8_default_project/models/subject_model.dart';
 
 import '../../../utils/colors.dart';
 import '../../../utils/icons.dart';
@@ -17,9 +16,10 @@ class QuizScreenTop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
     return  Container(
       margin: const EdgeInsets.symmetric(horizontal: 30),
-      height: height * 0.125,
+      height: height * (100/812),
       width: double.infinity,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

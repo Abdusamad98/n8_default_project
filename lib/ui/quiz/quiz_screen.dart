@@ -59,6 +59,8 @@ class _QuizScreenState extends State<QuizScreen> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: QuizAppBar(
         onSubmitTap: _navigateToResultScreen,
@@ -78,10 +80,10 @@ class _QuizScreenState extends State<QuizScreen> {
           ),
           Expanded(
             child: Container(
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(40),
-                  topRight: Radius.circular(40),
+                  topLeft: Radius.circular(width*(40/375)),
+                  topRight: Radius.circular(width*(40/375)),
                 ),
                 color: AppColors.C_162023,
               ),
