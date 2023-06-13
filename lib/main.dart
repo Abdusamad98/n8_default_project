@@ -1,10 +1,25 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:n8_default_project/ui/splash/splash_screen.dart';
 import 'package:n8_default_project/utils/theme.dart';
 
-void main() {
-  runApp(const MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+
+  runApp(
+    EasyLocalization(
+      supportedLocales: const [
+        Locale('ru', 'RU'),
+        Locale('en', 'EN'),
+        Locale('uz', 'UZ'),
+      ],
+      path: 'assets/translations',
+      fallbackLocale: Locale('ru', 'RU'),
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -23,6 +38,9 @@ class MyApp extends StatelessWidget {
           darkTheme: AppTheme.darkTheme,
           themeMode: ThemeMode.dark,
           home: child,
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
+          locale: context.locale,
         );
       },
       child: const SplashScreen(),

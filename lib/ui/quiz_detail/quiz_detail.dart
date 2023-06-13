@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:n8_default_project/models/subject_model.dart';
@@ -7,7 +8,6 @@ import 'package:n8_default_project/ui/quiz_detail/widgets/time_container.dart';
 import 'package:n8_default_project/ui/widgets/global_appbar.dart';
 import 'package:n8_default_project/ui/widgets/global_button.dart';
 import 'package:n8_default_project/utils/colors.dart';
-
 
 import '../../utils/utility_functions.dart';
 
@@ -34,11 +34,11 @@ class _QuizDetailScreenState extends State<QuizDetailScreen> {
         title: "${widget.subject.subjectName} quiz info",
       ),
       body: Padding(
-        padding:  EdgeInsets.only(top: 22.h),
+        padding: EdgeInsets.only(top: 22.h),
         child: Stack(
           children: [
             Container(
-              decoration:  BoxDecoration(
+              decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(40.r),
                   topRight: Radius.circular(40.r),
@@ -46,41 +46,42 @@ class _QuizDetailScreenState extends State<QuizDetailScreen> {
                 color: AppColors.C_162023,
               ),
               child: Padding(
-                padding:  EdgeInsets.only(top: 24.h),
+                padding: EdgeInsets.only(top: 24.h),
                 child: ListView(
                   physics: const BouncingScrollPhysics(),
                   padding:
-                       EdgeInsets.only(left: 24.w, right: 24.w, bottom: 24.h),
+                      EdgeInsets.only(left: 24.w, right: 24.w, bottom: 24.h),
                   children: [
                     SubjectImageView(iconPath: widget.subject.subjectImage),
-                     SizedBox(height: 16.h),
+                    SizedBox(height: 16.h),
                     getRichText(
                       "Total Questions:  ",
                       widget.subject.questions.length.toString(),
                       context,
                     ),
-                     SizedBox(height: 12.h),
+                    SizedBox(height: 12.h),
                     getRichText(
                       "Total time:  ",
                       getMinutelyText(widget.subject.quizTime),
                       context,
                     ),
-                     SizedBox(height: 12.h),
+                    SizedBox(height: 12.h),
                     Text(
                       "Instructions:",
-                      style:
-                          Theme.of(context).textTheme.titleMedium!.copyWith(
-                                fontWeight: FontWeight.w700,
-                              ),
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                            fontWeight: FontWeight.w700,
+                          ),
                     ),
-                     SizedBox(height: 5.h),
+                    SizedBox(height: 5.h),
                     Text(
                       widget.subject.description,
                       textAlign: TextAlign.start,
                       style: Theme.of(context).textTheme.titleSmall!.copyWith(
                           fontWeight: FontWeight.w400, letterSpacing: 1.2),
                     ),
-                     SizedBox( height: 80.h,)
+                    SizedBox(
+                      height: 80.h,
+                    )
                   ],
                 ),
               ),
@@ -88,7 +89,7 @@ class _QuizDetailScreenState extends State<QuizDetailScreen> {
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
-                padding:  EdgeInsets.symmetric(horizontal: 32.h),
+                padding: EdgeInsets.symmetric(horizontal: 32.h),
                 height: 80.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(40.r),
@@ -99,10 +100,10 @@ class _QuizDetailScreenState extends State<QuizDetailScreen> {
                   children: [
                     TimeContainer(
                         timeText: getMinutelyText(widget.subject.quizTime)),
-                     SizedBox(width: 32.w),
+                    SizedBox(width: 32.w),
                     Expanded(
                       child: GlobalButton(
-                        title: "Start Quiz",
+                        title: tr("start_quiz"),
                         onTap: () {
                           Navigator.push(
                             context,

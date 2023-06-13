@@ -1,9 +1,9 @@
 class AppImages {
   //png
-  static const String bicycle = "assets/images/bicycle.png";
   static const String logo = "assets/images/logo.png";
   static const String english = "assets/images/english.png";
   static const String flutter = "assets/images/flutter.png";
+  static const String drawer = "assets/images/drawer.png";
 
   //jpg
   static const String math = "assets/images/math.jpg";
@@ -16,4 +16,8 @@ class AppImages {
   static const String timerRight = "assets/svg/timer_right.svg";
   static const String timerLeft = "assets/svg/timer_left.svg";
   static const String retry = "assets/svg/retry.svg";
+
+  static const String uzbekFlag = "assets/svg/uzbek_flag.svg";
+  static const String russianFlag = "assets/svg/russian_flag.svg";
+  static const String englishFlag = "assets/svg/english_flag.svg";
 }
