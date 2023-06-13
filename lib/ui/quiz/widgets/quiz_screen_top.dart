@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../utils/colors.dart';
@@ -18,7 +19,7 @@ class QuizScreenTop extends StatelessWidget {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     return  Container(
-      margin: const EdgeInsets.symmetric(horizontal: 30),
+      margin:  EdgeInsets.symmetric(horizontal: 30.w),
       height: height * (100/812),
       width: double.infinity,
       child: Column(
@@ -32,7 +33,7 @@ class QuizScreenTop extends StatelessWidget {
                 .titleLarge!
                 .copyWith(fontWeight: FontWeight.w400),
           ),
-          const SizedBox(height: 7),
+           SizedBox(height: 7.h),
           Row(
             children: [
               Text(
@@ -44,7 +45,7 @@ class QuizScreenTop extends StatelessWidget {
               SvgPicture.asset(
                 AppImages.clock,
               ),
-              const SizedBox(width: 8),
+               SizedBox(width: 8.w),
               Text(
                 timeText,
                 style: Theme.of(context)
@@ -54,7 +55,7 @@ class QuizScreenTop extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 7),
+           SizedBox(height: 7.h),
           MyProgressIndicator(rate: rate),
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../utils/colors.dart';
 
@@ -18,11 +19,11 @@ class ResultTopView extends StatelessWidget {
           width: 1,
           color: AppColors.C_2F3739,
         ),
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(16.r),
       ),
       child: ListTile(
         contentPadding:
-            const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+             EdgeInsets.symmetric(vertical: 16.h, horizontal: 20.w),
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -30,11 +31,11 @@ class ResultTopView extends StatelessWidget {
               title,
               style: Theme.of(context).textTheme.titleSmall!.copyWith(
                     fontWeight: FontWeight.w400,
-                    fontSize: 16,
+                    fontSize: 16.sp,
 
                   ),
             ),
-            const SizedBox(height: 7),
+             SizedBox(height: 7.h),
             Text(
               subTitle,
               style: Theme.of(context).textTheme.titleSmall!.copyWith(

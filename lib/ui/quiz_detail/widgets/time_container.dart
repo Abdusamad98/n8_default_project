@@ -17,7 +17,7 @@ class TimeContainer extends StatelessWidget {
       height: (45.h),
       width: (108.w),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(8.r),
         border: Border.all(
           color: AppColors.textColor,
           width: 1,
@@ -29,7 +29,7 @@ class TimeContainer extends StatelessWidget {
           SvgPicture.asset(
             AppImages.clock,
           ),
-          const SizedBox(width: 5),
+           SizedBox(width: 5.w),
           Text(
             timeText,
             style: Theme.of(context)

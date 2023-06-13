@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:n8_default_project/ui/widgets/global_button.dart';
 import 'package:n8_default_project/utils/colors.dart';
@@ -22,7 +23,7 @@ class BottomButtonViews extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     return Container(
       color: AppColors.C_162023,
-      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 32),
+      padding:  EdgeInsets.symmetric(vertical: 20.h, horizontal: 32.w),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

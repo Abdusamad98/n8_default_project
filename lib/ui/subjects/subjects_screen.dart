@@ -3,7 +3,6 @@ import 'package:n8_default_project/data/my_repository.dart';
 import 'package:n8_default_project/models/subject_model.dart';
 import 'package:n8_default_project/ui/subjects/widgets/subject_item.dart';
 import 'package:n8_default_project/ui/quiz_detail/quiz_detail.dart';
-import 'package:n8_default_project/utils/colors.dart';
 import 'package:n8_default_project/utils/utility_functions.dart';
 
 class HomeScreen extends StatefulWidget {

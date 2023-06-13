@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:n8_default_project/models/question_model.dart';
 import 'package:n8_default_project/models/subject_model.dart';
 import 'package:n8_default_project/ui/quiz/widgets/answer_item.dart';
@@ -71,7 +72,7 @@ class _QuizScreenState extends State<QuizScreen> {
       ),
       body: Column(
         children: [
-          const SizedBox(height: 12),
+           SizedBox(height: 12.h),
           QuizScreenTop(
             rate: (1 - count / widget.subject.quizTime),
             subjectName: widget.subject.subjectName,
@@ -88,17 +89,17 @@ class _QuizScreenState extends State<QuizScreen> {
                 color: AppColors.C_162023,
               ),
               child: ListView(
-                padding: const EdgeInsets.all(28),
+                padding:  EdgeInsets.symmetric(vertical: 28.h,horizontal: 28.w),
                 children: [
                   getRichTextForCount("Q.${currentQuestionIndex + 1}/",
                       "${subjectQuestions.length}", context),
-                  const SizedBox(height: 12),
+                   SizedBox(height: 12.h),
                   Text(
                     subjectQuestions[currentQuestionIndex].questionText,
                     style: Theme.of(context)
                         .textTheme
                         .titleMedium!
-                        .copyWith(fontSize: 15),
+                        .copyWith(fontSize: 15.sp),
                   ),
                   AnswerItem(
                     isSelected: selectedAnswerIndex == 1,

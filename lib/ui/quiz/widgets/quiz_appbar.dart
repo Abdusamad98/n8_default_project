@@ -21,10 +21,10 @@ class QuizAppBar extends StatelessWidget implements PreferredSize {
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false,
-      toolbarHeight: 80,
+      toolbarHeight: 80.h,
       title: Column(
         children: [
-          const SizedBox(height: 24),
+           SizedBox(height: 24.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -34,7 +34,7 @@ class QuizAppBar extends StatelessWidget implements PreferredSize {
                   height: 48.w,
                   width: 48.w,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(8.r),
                       color: AppColors.C_162023,
                       border: Border.all(color: AppColors.C_2F3739)),
                   child: Center(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../utils/colors.dart';
 
@@ -10,9 +11,9 @@ class MyProgressIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(8),
+      borderRadius: BorderRadius.circular(8.r),
       child:  SizedBox(
-        height: 8,
+        height: 8.h,
         child: LinearProgressIndicator(
           value: rate, // percent filled
           valueColor:
