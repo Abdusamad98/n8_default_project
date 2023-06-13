@@ -59,7 +59,7 @@ Agar savolga noto'g'ri javob beringiz, to'g'ri javobni topguncha qaytadan urinib
         ),
         QuestionModel(
           trueAnswer: "2",
-          questionText: "Ikkita sonni darajaga ko'tarish orqali 64 ga tenglash mumkin bo'lgan eng kichik toq sonni toping?",
+          questionText: "Ikkita sonni darajaga ko'tarish orqali 64 ga tenglash mumkin bo'lgan eng kichik tub sonni toping?",
           answer1: "12",
           answer2: "13",
           answer3: "2",
@@ -188,7 +188,7 @@ If you select an incorrect response for a question, you can try again until you 
       level: QuizLevel.easy,
       questions: [
         QuestionModel(
-          trueAnswer: "4",
+          trueAnswer: "5",
           questionText: "How many vowels are there in the English alphabet?",
           answer1: "5",
           answer2: "10",

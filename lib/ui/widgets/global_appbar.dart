@@ -29,8 +29,8 @@ class GlobalAppBar extends StatelessWidget implements PreferredSize {
               GestureDetector(
                 onTap: onTap,
                 child: Container(
-                  height: 48.w,
-                  width: 48.w,
+                  height: 48.h,
+                  width: 48.h,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8.r),
                       color: AppColors.C_162023,

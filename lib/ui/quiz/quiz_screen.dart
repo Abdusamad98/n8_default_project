@@ -70,7 +70,7 @@ class _QuizScreenState extends State<QuizScreen> {
       ),
       body: Column(
         children: [
-           SizedBox(height: 12.h),
+          SizedBox(height: 12.h),
           QuizScreenTop(
             rate: (1 - count / widget.subject.quizTime),
             subjectName: widget.subject.subjectName,
