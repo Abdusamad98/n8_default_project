@@ -220,11 +220,11 @@ If you select an incorrect response for a question, you can try again until you 
           answer4: "Black, White, Gray",
         ),
         QuestionModel(
-          trueAnswer: "5",
+          trueAnswer: "20",
           questionText: "How many fingers does a human have?",
           answer1: "4",
           answer2: "5",
-          answer3: "6",
+          answer3: "20",
           answer4: "10",
         ),
         QuestionModel(
