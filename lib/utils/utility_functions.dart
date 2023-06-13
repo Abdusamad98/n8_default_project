@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 Widget getRichText(String text1, String text2, BuildContext context) {
   return RichText(
@@ -28,7 +29,7 @@ Widget getRichTextForCount(String text1, String text2, BuildContext context) {
       style: Theme.of(context)
           .textTheme
           .titleSmall!
-          .copyWith(fontWeight: FontWeight.w700, fontSize: 20),
+          .copyWith(fontWeight: FontWeight.w700, fontSize: 20.sp),
       children: <TextSpan>[
         TextSpan(
           text: text2,

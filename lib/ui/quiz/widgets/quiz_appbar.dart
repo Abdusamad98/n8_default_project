@@ -21,10 +21,10 @@ class QuizAppBar extends StatelessWidget implements PreferredSize {
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false,
-      toolbarHeight: 80,
+      toolbarHeight: 80.h,
       title: Column(
         children: [
-          const SizedBox(height: 24),
+           SizedBox(height: 24.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -84,5 +84,5 @@ class QuizAppBar extends StatelessWidget implements PreferredSize {
   Widget get child => throw UnimplementedError();
 
   @override
-  Size get preferredSize => const Size(double.infinity, 80);
+  Size get preferredSize =>  Size(double.infinity, 80.h);
 }

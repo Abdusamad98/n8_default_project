@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:n8_default_project/utils/colors.dart';
 import 'package:n8_default_project/utils/icons.dart';
@@ -11,10 +12,10 @@ class TimeContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 45,
-      width: 94,
+      height: 45.h,
+      width: 94.w,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(8.r),
         border: Border.all(
           color: AppColors.textColor,
           width: 1,
@@ -26,7 +27,7 @@ class TimeContainer extends StatelessWidget {
           SvgPicture.asset(
             AppImages.clock,
           ),
-          const SizedBox(width: 5),
+           SizedBox(width: 5.w),
           Text(
             timeText,
             style: Theme.of(context)

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:n8_default_project/utils/colors.dart';
 
 class AnswerItem extends StatelessWidget {
@@ -18,14 +19,14 @@ class AnswerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 10),
+      margin:  EdgeInsets.symmetric(vertical: 10.h),
       decoration: BoxDecoration(
         color: isSelected ? AppColors.C_0E81B4 : AppColors.C_273032,
         borderRadius: BorderRadius.circular(16),
       ),
       child: ListTile(
         onTap: onTap,
-        contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
+        contentPadding:  EdgeInsets.symmetric(vertical: 0, horizontal: 20.w),
         title: Row(
           children: [
             Text(
@@ -35,7 +36,7 @@ class AnswerItem extends StatelessWidget {
                   .titleSmall!
                   .copyWith(fontWeight: FontWeight.w700),
             ),
-            const SizedBox(width: 12),
+             SizedBox(width: 12.w),
             Expanded(
               child: Text(
                 answerText,

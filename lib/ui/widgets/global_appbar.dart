@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../utils/colors.dart';
@@ -28,8 +29,8 @@ class GlobalAppBar extends StatelessWidget implements PreferredSize {
               GestureDetector(
                 onTap: onTap,
                 child: Container(
-                  height: 48,
-                  width: 48,
+                  height: 48.w,
+                  width: 48.w,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
                       color: AppColors.C_162023,
@@ -45,7 +46,7 @@ class GlobalAppBar extends StatelessWidget implements PreferredSize {
                 style: Theme.of(context)
                     .textTheme
                     .titleMedium!
-                    .copyWith(fontSize: 18),
+                    .copyWith(fontSize: 18.sp),
               )
             ],
           ),
@@ -58,5 +59,5 @@ class GlobalAppBar extends StatelessWidget implements PreferredSize {
   Widget get child => throw UnimplementedError();
 
   @override
-  Size get preferredSize => const Size(double.infinity, 80);
+  Size get preferredSize =>  Size(double.infinity, 80.h);
 }

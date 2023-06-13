@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:n8_default_project/models/subject_model.dart';
 import 'package:n8_default_project/ui/quiz/quiz_screen.dart';
 import 'package:n8_default_project/ui/quiz_detail/widgets/subject_image_view.dart';
@@ -7,12 +7,12 @@ import 'package:n8_default_project/ui/quiz_detail/widgets/time_container.dart';
 import 'package:n8_default_project/ui/widgets/global_appbar.dart';
 import 'package:n8_default_project/ui/widgets/global_button.dart';
 import 'package:n8_default_project/utils/colors.dart';
-import 'package:n8_default_project/utils/icons.dart';
+
 
 import '../../utils/utility_functions.dart';
 
 class QuizDetailScreen extends StatefulWidget {
-  QuizDetailScreen({
+  const QuizDetailScreen({
     Key? key,
     required this.subject,
   }) : super(key: key);
@@ -34,38 +34,38 @@ class _QuizDetailScreenState extends State<QuizDetailScreen> {
         title: "${widget.subject.subjectName} quiz info",
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 22),
+        padding:  EdgeInsets.only(top: 22.h),
         child: Stack(
           children: [
             Container(
-              decoration: const BoxDecoration(
+              decoration:  BoxDecoration(
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(40),
-                  topRight: Radius.circular(40),
+                  topLeft: Radius.circular(40.r),
+                  topRight: Radius.circular(40.r),
                 ),
                 color: AppColors.C_162023,
               ),
               child: Padding(
-                padding: const EdgeInsets.only(top: 24),
+                padding:  EdgeInsets.only(top: 24.h),
                 child: ListView(
                   physics: const BouncingScrollPhysics(),
                   padding:
-                      const EdgeInsets.only(left: 24, right: 24, bottom: 24),
+                       EdgeInsets.only(left: 24.w, right: 24.w, bottom: 24.h),
                   children: [
                     SubjectImageView(iconPath: widget.subject.subjectImage),
-                    const SizedBox(height: 16),
+                     SizedBox(height: 16.h),
                     getRichText(
                       "Total Questions:  ",
                       widget.subject.questions.length.toString(),
                       context,
                     ),
-                    const SizedBox(height: 12),
+                     SizedBox(height: 12.h),
                     getRichText(
                       "Total time:  ",
                       getMinutelyText(widget.subject.quizTime),
                       context,
                     ),
-                    const SizedBox(height: 12),
+                     SizedBox(height: 12.h),
                     Text(
                       "Instructions:",
                       style:
@@ -73,14 +73,14 @@ class _QuizDetailScreenState extends State<QuizDetailScreen> {
                                 fontWeight: FontWeight.w700,
                               ),
                     ),
-                    const SizedBox(height: 5),
+                     SizedBox(height: 5.h),
                     Text(
                       widget.subject.description,
                       textAlign: TextAlign.start,
                       style: Theme.of(context).textTheme.titleSmall!.copyWith(
                           fontWeight: FontWeight.w400, letterSpacing: 1.2),
                     ),
-                    const SizedBox( height: 80,)
+                     SizedBox( height: 80.h,)
                   ],
                 ),
               ),
@@ -88,10 +88,10 @@ class _QuizDetailScreenState extends State<QuizDetailScreen> {
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 32),
-                height: 80,
+                padding:  EdgeInsets.symmetric(horizontal: 32.h),
+                height: 80.h,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(40),
+                  borderRadius: BorderRadius.circular(40.r),
                   color: AppColors.C_273032,
                 ),
                 child: Row(
@@ -99,7 +99,7 @@ class _QuizDetailScreenState extends State<QuizDetailScreen> {
                   children: [
                     TimeContainer(
                         timeText: getMinutelyText(widget.subject.quizTime)),
-                    const SizedBox(width: 32),
+                     SizedBox(width: 32.w),
                     Expanded(
                       child: GlobalButton(
                         title: "Start Quiz",

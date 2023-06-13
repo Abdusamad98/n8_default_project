@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:n8_default_project/models/answers_report.dart';
 import 'package:n8_default_project/models/subject_model.dart';
 import 'package:n8_default_project/ui/quiz_result/result_report_screen.dart';
@@ -55,29 +56,29 @@ class _QuizResultState extends State<QuizResult> {
           Expanded(
             child: ListView(
               physics: const BouncingScrollPhysics(),
-              padding: const EdgeInsets.all(30),
+              padding:  EdgeInsets.symmetric(vertical: 30.h,horizontal: 30.w),
               children: [
                 ResultTopView(
                   title: "Pair of Linear Equation in Two Variables ",
                   subTitle: "${widget.subjectModel.subjectName} /  Theme",
                 ),
-                const SizedBox(height: 19),
+                 SizedBox(height: 19.h),
                 TestResultView(
                   totalQuestionCount: widget.subjectModel.questions.length,
                   trueAnswersCount: answersReport.trueCount,
                 ),
-                const SizedBox(height: 19),
+                 SizedBox(height: 19.h),
                 ResultCountView(
                   countFalse:
                       answersReport.falseCount + answersReport.unselectedCount,
                   countTrue: answersReport.trueCount,
                 ),
-                const SizedBox(height: 19),
+                 SizedBox(height: 19.h),
                  ResultTimeView(
                    passedTime: widget.passedTime,
                   totalQuestionsCount: widget.subjectModel.questions.length,
                 ),
-                const SizedBox(height: 19),
+                 SizedBox(height: 19.h),
                 GlobalButton(
                   title: "Check Answers",
                   onTap: () {
@@ -94,7 +95,7 @@ class _QuizResultState extends State<QuizResult> {
                   color: AppColors.C_0E81B4.withOpacity(0.5),
                   withBorder: true,
                 ),
-                const SizedBox(height: 16),
+                 SizedBox(height: 16.h),
                 RetryButton(onTap: () {
                   Navigator.pop(context);
                 }),

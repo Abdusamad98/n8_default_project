@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../utils/colors.dart';
 import '../../widgets/global_button.dart';
@@ -11,12 +12,12 @@ class ResultBottomView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 32),
-      height: 80,
-      decoration: const BoxDecoration(
+      padding:  EdgeInsets.symmetric(horizontal: 32.w),
+      height: 80.h,
+      decoration:  BoxDecoration(
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(40),
-          topRight: Radius.circular(40),
+          topLeft: Radius.circular(40.r),
+          topRight: Radius.circular(40.r),
         ),
         color: AppColors.C_162023,
       ),
@@ -28,22 +29,22 @@ class ResultBottomView extends StatelessWidget {
               text: "Next Chapter:\n",
               style: Theme.of(context).textTheme.titleSmall!.copyWith(
                     fontWeight: FontWeight.w600,
-                    fontSize: 15,
+                    fontSize: 15.sp,
                   ),
               children: <TextSpan>[
                 TextSpan(
                   text: "Quadratic Equations",
                   style: Theme.of(context).textTheme.titleSmall!.copyWith(
                         fontWeight: FontWeight.w400,
-                        fontSize: 15,
+                        fontSize: 15.sp,
                       ),
                 ),
               ],
             ),
           ),
-          const SizedBox(width: 32),
+           SizedBox(width: 32.w),
           SizedBox(
-            width: 50,
+            width: 50.w,
             child: GlobalButton(
               title: "Go",
               onTap: onTap,
