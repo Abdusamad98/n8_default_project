@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:n8_default_project/local/storage_repository.dart';
 import 'package:n8_default_project/ui/home/home_screen.dart';
 
-void main() {
+Future<void> main() async {
+
+   WidgetsFlutterBinding.ensureInitialized();
+
+  await StorageRepository.getInstance();
+
   runApp(const MyApp());
 }
 
@@ -13,11 +19,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
+        useMaterial3: false,
       ),
       home: HomeScreen(),
     );
   }
 }
-
