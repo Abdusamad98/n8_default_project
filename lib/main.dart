@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:n8_default_project/local/storage_repository.dart';
+import 'package:n8_default_project/ui/expension_tile.dart';
 import 'package:n8_default_project/ui/home/home_screen.dart';
 import 'package:n8_default_project/ui/profile/profile_screen.dart';
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
         useMaterial3: false,
       ),
-      home: ProfileScreen(),
+      home: NewWidgetExample(),
     );
   }
 }
