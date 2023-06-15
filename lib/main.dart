@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:n8_default_project/local/storage_repository.dart';
 import 'package:n8_default_project/ui/home/home_screen.dart';
+import 'package:n8_default_project/ui/profile/profile_screen.dart';
 
 Future<void> main() async {
-
-   WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
 
   await StorageRepository.getInstance();
 
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
         useMaterial3: false,
       ),
-      home: HomeScreen(),
+      home: ProfileScreen(),
     );
   }
 }
