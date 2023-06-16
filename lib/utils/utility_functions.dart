@@ -13,9 +13,8 @@ class UtilityFunctions {
     type: MaskAutoCompletionType.lazy,
   );
 
-  static MaskTextInputFormatter maskFormatterId = MaskTextInputFormatter(
+  static MaskTextInputFormatter maskFormatterPassword = MaskTextInputFormatter(
     mask: '\#### ## ##',
-    filter: {"#": RegExp(r'[0-9]')},
     type: MaskAutoCompletionType.lazy,
   );
 }

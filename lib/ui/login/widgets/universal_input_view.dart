@@ -58,11 +58,10 @@ class _UniversalInputViewState extends State<UniversalInputView> {
           ),
           const SizedBox(height: 8),
           TextField(
+            obscureText: widget.format == InputFormatType.password,
             inputFormatters: [
               if (widget.format == InputFormatType.phone)
                 UtilityFunctions.maskFormatterPhone,
-              if (widget.format == InputFormatType.id)
-                UtilityFunctions.maskFormatterId,
               if (widget.format == InputFormatType.date)
                 UtilityFunctions.maskFormatterDate,
             ],

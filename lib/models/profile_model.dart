@@ -1,52 +1,44 @@
 import 'package:flutter/material.dart';
 
-class ProfileModel {
-  ProfileModel({
+class RegisterModel {
+  RegisterModel({
     required this.name,
     required this.phoneNumber,
-    required this.gender,
     required this.email,
-    required this.addressText,
     required this.birthday,
-    required this.studentId,
+    required this.password,
   });
 
   final String name;
   final String email;
   final String phoneNumber;
   final String birthday;
-  final String studentId;
-  final String addressText;
-  final bool gender;
+  final String password;
 
-  ProfileModel copyWith({
+  RegisterModel copyWith({
     String? name,
+    String? password,
     String? email,
     String? phoneNumber,
     String? birthday,
-    String? studentId,
-    String? addressText,
-    bool? gender,
   }) {
-    return ProfileModel(
+    return RegisterModel(
       name: name ?? this.name,
+      password: password ?? this.password,
       phoneNumber: phoneNumber ?? this.phoneNumber,
-      gender: gender ?? this.gender,
       email: email ?? this.email,
-      addressText: addressText ?? this.addressText,
       birthday: birthday ?? this.birthday,
-      studentId: studentId ?? this.studentId,
     );
   }
 
-  bool canSaveStudentData() {
-    if (name.length < 3) return false;
-    if (email.length < 7) return false;
-    //if (addressText.length < 10) return false;
-    if (phoneNumber.length < 12) return false;
-    if (birthday.length < 8) return false;
-    if (studentId.length < 4) return false;
-    return true;
+  String canRegister() {
+    if (name.length < 3) return "Name maydoni xato";
+    if (email.length < 7) return "Email xato";
+    if (birthday.length < 8) return "Sana xato";
+    if (phoneNumber.length < 12) return "Phone number xato";
+    if (password.length < 8) return "Password maydoni xato ";
+
+    return "";
   }
 }
 
@@ -55,5 +47,5 @@ enum InputFormatType {
   phone,
   date,
   email,
-  id,
+  password,
 }

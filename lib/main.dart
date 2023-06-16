@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:n8_default_project/local/storage_repository.dart';
-import 'package:n8_default_project/ui/expension_tile.dart';
-import 'package:n8_default_project/ui/home/home_screen.dart';
-import 'package:n8_default_project/ui/profile/profile_screen.dart';
+import 'package:n8_default_project/ui/splash/splash_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,7 +13,6 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
         useMaterial3: false,
       ),
-      home: ProfileScreen(),
+      home: SplashScreen(),
     );
   }
 }
