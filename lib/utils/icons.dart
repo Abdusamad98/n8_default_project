@@ -4,4 +4,5 @@ class AppImages{
 
   //svg
   static const String react = "assets/svg/react.svg";
+  static const String loader = "assets/images/loader.json";
 }
