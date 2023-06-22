@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:n8_default_project/ui/home/home_screen.dart';
+import 'package:n8_default_project/ui/tabs_box.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,9 +15,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        //useMaterial3: true,
       ),
-      home: HomeScreen(),
+      home: TabsBox(),
     );
   }
 }

@@ -11,7 +11,15 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Deafult screen"),),
+      appBar: AppBar(
+        title: Text("Deafult screen"),
+      ),
+      body: Center(
+        child: Text(
+          "Home",
+          style: TextStyle(fontSize: 45),
+        ),
+      ),
     );
   }
 }
