@@ -118,4 +118,28 @@ class LocalDatabase {
       return contacts.first;
     }
   }
+
+  static Future<List<ContactModelSql>> getContactsByAlphabet(
+      String order) async {
+    List<ContactModelSql> allToDos = [];
+    final db = await getInstance.database;
+    allToDos = (await db.query(ContactModelFields.contactsTable,
+            orderBy: "${ContactModelFields.name} $order"))
+        .map((e) => ContactModelSql.fromJson(e))
+        .toList();
+    return allToDos;
+  }
+
+  static Future<List<ContactModelSql>> getContactsByQuery(String query) async {
+    List<ContactModelSql> allToDos = [];
+    final db = await getInstance.database;
+    allToDos = (await db.query(
+      ContactModelFields.contactsTable,
+      where: "${ContactModelFields.name} LIKE ?",
+      whereArgs: [query],
+    ))
+        .map((e) => ContactModelSql.fromJson(e))
+        .toList();
+    return allToDos;
+  }
 }
