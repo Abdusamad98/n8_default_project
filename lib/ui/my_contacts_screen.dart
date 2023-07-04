@@ -78,8 +78,8 @@ class _MyContactsScreenState extends State<MyContactsScreen> {
                   _getContactsByAlp(selectedMenu == 2 ? "ASC" : "DESC");
                 }
               },
-              offset: Offset(-50, 0),
-              //  position: PopupMenuPosition.values.last,
+             // offset: Offset(-50, 0),
+                position: PopupMenuPosition.values.last,
               itemBuilder: (BuildContext context) => <PopupMenuEntry<int>>[
                 const PopupMenuItem<int>(
                   value: 1,
