@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:n8_default_project/ui/my_contacts_screen.dart';
+import 'package:n8_default_project/ui/app_routes.dart';
+import 'package:n8_default_project/ui/my_contacts/my_contacts_screen.dart';
 
 import 'data/local/storage_repo/storage_repository.dart';
 
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyContactsScreen(),
+      initialRoute: RouteNames.contacts,
+      onGenerateRoute: AppRoutes.generateRoute,
     );
   }
 }
