@@ -1,3 +1,4 @@
+import 'package:n8_default_project/data/local/storage_repository.dart';
 import 'package:n8_default_project/data/models/universal_model.dart';
 import 'package:n8_default_project/data/models/user/user_model.dart';
 import 'package:n8_default_project/data/network/providers/api_provider.dart';
@@ -16,5 +17,9 @@ class UserRepo {
       return universalResponse.data as List<UserModel>;
     }
     return [];
+  }
+
+  Future<void> logOutUser() async {
+    await StorageRepository.deleteString("token");
   }
 }

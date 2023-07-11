@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:n8_default_project/data/local/storage_repository.dart';
 import 'package:n8_default_project/data/network/providers/api_provider.dart';
+import 'package:n8_default_project/ui/splash/splash_screen.dart';
 import 'package:n8_default_project/ui/tab_box/tab_box.dart';
 
 Future<void> main() async {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: TabBox(apiProvider: ApiProvider(),),
+      home: const SplashScreen(),
     );
   }
 }

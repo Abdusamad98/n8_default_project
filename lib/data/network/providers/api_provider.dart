@@ -17,9 +17,7 @@ class ApiProvider {
     try {
       final response = await http.post(
         url,
-        body: {
-          {"username": username, "password": password}
-        },
+        body: {"username": username, "password": password},
       );
       if (response.statusCode == 200) {
         String token = jsonDecode(response.body)["token"];
@@ -92,13 +90,11 @@ class ApiProvider {
     try {
       final response = await http.post(
         url,
-        body: product.toJson(),
+        body: jsonEncode(product.toJson()),
       );
       if (response.statusCode == 200) {
         return UniversalResponse(
-          data: ProductModel.fromJson(
-            jsonDecode(response.body),
-          ),
+          data: ProductModel.fromJson(jsonDecode(response.body)),
         );
       }
       return UniversalResponse(error: 'Error: Status code not equal to 200');

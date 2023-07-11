@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:n8_default_project/data/models/product/product_model.dart';
 import 'package:n8_default_project/data/network/repositories/category_repo.dart';
 import 'package:n8_default_project/data/network/repositories/product_repo.dart';
+import 'package:n8_default_project/ui/tab_box/products/sub_screens/product_add_screen.dart';
 import 'package:n8_default_project/ui/tab_box/products/widgets/category_selector.dart';
 
 class ProductsScreen extends StatefulWidget {
@@ -53,6 +54,23 @@ class _ProductsScreenState extends State<ProductsScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Products screen"),
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return ProductAddScreen(
+                        productRepo:widget.productRepo
+                      );
+                    },
+                  ),
+                );
+              },
+              icon: const Icon(Icons.add)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert)),
+        ],
       ),
       body: Column(
         children: [
