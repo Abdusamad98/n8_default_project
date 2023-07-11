@@ -80,6 +80,7 @@ class _ProductsScreenState extends State<ProductsScreen> {
                   onCategorySelected: (selectedCategory) {
                     activeCategoryName = selectedCategory;
                     _updateProducts();
+
                   },
                 )
               : const Center(child: CircularProgressIndicator()),
