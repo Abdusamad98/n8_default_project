@@ -42,6 +42,11 @@ class _CustomScrollViewExampleState extends State<CustomScrollViewExample> {
               title: const Text('Demo'),
             ),
           ),
+
+          SliverToBoxAdapter(
+            child: SizedBox(height: 20),
+          ),
+
           SliverGrid(
             gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
               maxCrossAxisExtent: 200.0,
